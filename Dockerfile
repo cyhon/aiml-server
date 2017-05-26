@@ -1,6 +1,11 @@
-FROM docker.finogeeks.club/base/python-base:3.6.1
+FROM docker.finogeeks.club/base/python:2.7
 
 WORKDIR /app
+
+RUN apt-get update \
+    && apt-get install -y python-pip \
+    && pip install --upgrade pip \
+    && rm -rf /var/lib/apt/lists/*
 
 COPY requirements.txt /app/
 RUN pip install -r requirements.txt
