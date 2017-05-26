@@ -1,0 +1,6 @@
+version: "2"
+services:
+  openacc-bot:
+    image: "docker.finogeeks.club/mesons/aiml-server"
+    ports:
+      - "8080:8080"
