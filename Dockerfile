@@ -4,6 +4,7 @@ WORKDIR /app
 
 RUN apt-get update \
     && apt-get install -y python-pip \
+    && export https_proxy=http://10.135.186.25:3128 \
     && pip install --upgrade pip \
     && rm -rf /var/lib/apt/lists/*
 
